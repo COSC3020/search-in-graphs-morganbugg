@@ -22,6 +22,16 @@ code, but you can base yours on test code from other exercises.
 What is the worst-case big $\Theta$ complexity of your implementation? Add your
 answer, including your reasoning, to this markdown file.
 
+### Answer
+
+This implementation visits every vertex and edge at most once.  Additionally, the use of ".includes" means that the function can take up to $|V|$ to search for a node in "visited" in the worst case.  Since the function needs to check if each node has been visited, and takes $|E|$ time to push all of the neighbors to the stack, the overall worst case time complexity should be $\Theta(|V| * (|V| + |E|))$.
+
+### Sources
+
+I used ChatGPT as a resource when determining how to start my testing process, but many specifics were from my own research into jsverify as problems came up.  Additionally, to make sure I wouldn't run into any problems that might have been in my own code, I used an implementation of depth-first search I found at the link below, with some alterations.
+
+https://javascript.plainenglish.io/find-path-depth-first-search-28d27bba8ae0
+
 ## Bonus
 
 Implement and analyze breadth-first search.
